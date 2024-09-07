@@ -1,0 +1,168 @@
+*{
+    color: white;
+    
+}
+.header{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+
+.refreshButton{
+    height: 30px;
+    margin-left: 25%;
+    background-color: grey;
+    border: 2px solid yellow;
+    border-radius: 3px;
+    width: 150px;
+}
+
+.content{
+    border: 2px solid yellow;
+    border-left-width: 20px;
+    border-left-color: yellow;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.wholeList p{
+    margin-left: 15px;
+    font-size: 20px;
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 3px;
+}
+
+.horizontal{
+    display: flex;
+    justify-content: start;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/*
+.horizontal{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+ .vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+hr{
+    background-color: black;
+    color: black;
+}
+
+.tag{
+    font-size: 25px;
+    color: yellowgreen;
+}
+
+.ans{
+    margin-left: 15px;
+}
+li{
+    margin-left: 25px;
+    font-size: 20px;
+    list-style: none;
+}
+.up-del-btn{
+    margin: auto;
+}
+
+.update-btn, .delete-btn{
+    border: 2px solid yellow;
+    width: 125px;
+    height: 45px;
+    background-color: grey;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+
+/* For the update form */
+input{
+    height: 19px;
+    border: 2px white solid;
+    border-radius: 2px;
+}
+label{
+    margin-bottom: 3px;
+}
+
+.checkboxLabel{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.options{
+    margin-left: 15px;
+}
+select{
+    margin-left: 10px;
+    width: 150px;
+    background-color: grey;
+}
+
+.addComm{
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+textarea{
+    width: 300px;
+    border: 2px yellow solids;
+    border-radius: 5px;
+}
+
+.btns{
+    display:flex;
+    justify-content: space-between;
+}
+button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.submit-btn{
+    margin-left: 50px;
+    background-color: rgb(22, 22, 158);
+    border: 2px rgb(22, 22, 158) solid;
+}
+
+.reset-btn{
+    margin-right: 50px;
+    background-color: rgb(224, 40, 40);
+    border: 2px rgb(224, 40, 40) solid;
+}
+
+input, textarea{
+    background-color: grey;
+}
+
+.edit-form{
+    margin-left: 25%;
+    border: 2px yellow solid;
+    padding: 20px;
+    width: 45%;
+}
+
+
+
+

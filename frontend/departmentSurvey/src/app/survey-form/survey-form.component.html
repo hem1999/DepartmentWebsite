@@ -1,0 +1,152 @@
+<!-- Displays the form for survey submission -->
+<main>
+    <div class="fullform">
+        <div class="form">
+            <h1>CS Department Survey</h1>
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <fieldset>
+                    @if(formInvalidMessage){
+                    <p style="color: red;">Form is Invalid, Please fill all of the about you section</p>
+                    }
+                    <legend>About you</legend>
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label> First Name</label>
+                            <input type="text" name="firstName" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" required ngModel>
+                        </div>
+                    </div>
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">Street Address</label>
+                            <input type="text" name="address" required ngModel>
+                        </div>
+
+                    </div>
+
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">City</label>
+                            <input type="text" name="city" id="" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">State</label>
+                            <input type="text" name="state" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Zipcode</label>
+                            <input type="text" name="zipcode" required ngModel>
+                        </div>
+                    </div>
+
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">Telephone</label>
+                            <input type="tel" name="telephone" id="" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Email</label>
+                            <input type="email" name="email" id="" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Date of survey</label>
+                            <input type="date" name="dateOfSurvey" id="" required ngModel>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        About University
+                    </legend>
+                    <label for="">What you like most about Campus?</label>
+                    <div class="options">
+                        <div class="vertical">
+                            <div class="horizontal">
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeStudents" value="students" ngModel>
+                                    <label class="checkboxLabel">Students</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeLocation" value="location" ngModel>
+                                    <label class="checkboxLabel">Location</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeAtmosphere" value="atmosphere" ngModel>
+                                    <label class="checkboxLabel">Atmosphere</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeDorms" value="dorm_rooms" ngModel>
+                                    <label class="checkboxLabel">Dorm Rooms</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeSports" value="sports" ngModel>
+                                    <label class="checkboxLabel">Sports</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <label for="">How you became interested in University</label>
+                    <div class="options">
+                        <div class="vertical">
+                            <div class="horizontal">
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="FRIENDS" ngModel>
+                                    <label for="" class="checkboxLabel">Friends</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="TELEVISION" ngModel>
+                                    <label for="" class="checkboxLabel">Television</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="INTERNET" ngModel>
+                                    <label for="" class="checkboxLabel">Internet</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">How likely will you recommend?</label>
+                        <select name="likelihood" id="" ngModel>
+                            <option value="VERY_LIKELY">Very Likely</option>
+                            <option value="LIKELY">Likely</option>
+                            <option value="UNLIKELY">Unlikely</option>
+                        </select>
+                    </div>
+
+                    <div class="vertical">
+                        <label for="" class="addComm">Additional Comments</label>
+                        <textarea name="additionalComments" id="" ngModel></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Acknowledgement</legend>
+                    @if(acknowledgementError){
+                        <p style="color: red;"> Must accept the T&C </p>
+                        }
+                    <div class="horizontal">
+                        <input type="checkbox" name="acknowledge" ngModel required>
+                        <p style="margin-left: 3px;">Please acknowledge the T&C for usage of data</p>
+                    </div>
+                    
+                </fieldset>
+
+                
+                <div class="btns">
+                    <button class="submit-btn" name="submit">Submit</button>
+
+                    <button class="reset-btn" name="reset" (click)="onReset(form)">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

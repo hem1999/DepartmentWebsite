@@ -1,0 +1,31 @@
+<!-- app component html that shows buttons for all three views defaulting to welcome screen -->
+<header>
+  <div class="logo">
+      <p (click)="changeView(1)">GMU-CS</p>
+  </div>
+  <div>
+      <p (click)="changeView(2)">SurveyForm</p>
+  </div>
+  <div>
+    <p (click)="changeView(3)">List Surveys</p>
+  </div>
+</header>
+<main>
+
+  @if(showWelcome){
+    <div class="welcome">
+      <h1>Welcome to GMU CS Department Survey</h1>
+    </div>
+  }
+  
+  @if(showList){
+    <app-list-surveys></app-list-surveys>
+  }
+  
+  @if(showForm){
+    <app-survey-form></app-survey-form>
+  }
+  
+</main>
+
+<router-outlet />

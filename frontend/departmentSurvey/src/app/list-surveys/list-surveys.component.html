@@ -1,0 +1,235 @@
+<div class="header">
+    <h1>All Completed Surveys</h1>
+    <button class="refreshButton" type="submit" (click)="refreshData()">Refresh</button>
+
+</div>
+
+<!--  -->
+<!--  -->
+<!-- With Signals -->
+<!--  -->
+<!--  -->
+<div class="wholeList">
+    @if(enableEditForm){
+    <div class="edit-form">
+        <div>
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <fieldset>
+                    @if(formInvalidMessage){
+                    <p style="color: red;">Form is Invalid, Please fill all of the about you section</p>
+                    }
+                    <legend>About you</legend>
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label> First Name</label>
+                            <input type="text" name="firstName" [(ngModel)]="currentUpdatableSurvey.firstName" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" [(ngModel)]="currentUpdatableSurvey.lastName" required ngModel>
+                        </div>
+                    </div>
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">Street Address</label>
+                            <input type="text" name="address" [(ngModel)]="currentUpdatableSurvey.address" required ngModel>
+                        </div>
+    
+                    </div>
+    
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">City</label>
+                            <input type="text" name="city" id=""  [(ngModel)]="currentUpdatableSurvey.city"  required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">State</label>
+                            <input type="text" name="state" [(ngModel)]="currentUpdatableSurvey.state"  required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Zipcode</label>
+                            <input type="text" name="zipcode" [(ngModel)]="currentUpdatableSurvey.zip" required ngModel>
+                        </div>
+                    </div>
+    
+                    <div class="horizontal">
+                        <div class="vertical">
+                            <label for="">Telephone</label>
+                            <input type="tel" name="telephone" id="" [(ngModel)]="currentUpdatableSurvey.phone" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Email</label>
+                            <input type="email" name="email" id="" [(ngModel)]="currentUpdatableSurvey.email" required ngModel>
+                        </div>
+                        <div class="vertical">
+                            <label for="">Date of survey</label>
+                            <input type="date" name="dateOfSurvey" id="" [(ngModel)]="currentUpdatableSurvey.dateOfSurvey" required ngModel>
+                        </div>
+                    </div>
+    
+    
+                </fieldset>
+    
+                <fieldset>
+                    <legend>
+                        About University
+                    </legend>
+                    <label for="">What you like most about Campus?</label>
+                    <div class="options">
+                        <div class="vertical">
+                            <div class="horizontal">
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeStudents" value="students" [(ngModel)]="currentUpdatableSurvey.q1Students" ngModel>
+                                    <label class="checkboxLabel">Students</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeLocation" value="location" [(ngModel)]="currentUpdatableSurvey.q1Location" ngModel>
+                                    <label class="checkboxLabel">Location</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeAtmosphere" value="atmosphere" [(ngModel)]="currentUpdatableSurvey.q1Campus" ngModel>
+                                    <label class="checkboxLabel">Atmosphere</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeDorms" value="dorm_rooms" [(ngModel)]="currentUpdatableSurvey.q1Dorms" ngModel>
+                                    <label class="checkboxLabel">Dorm Rooms</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="checkbox" name="likeSports" value="sports" [(ngModel)]="currentUpdatableSurvey.q1Atmosphere" ngModel>
+                                    <label class="checkboxLabel">Sports</label>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <label for="">How you became interested in University</label>
+                    <div class="options">
+                        <div class="vertical">
+                            <div class="horizontal">
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="FRIENDS" [(ngModel)]="currentUpdatableSurvey.q2answer" ngModel>
+                                    <label for="" class="checkboxLabel">Friends</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="TELEVISION" [(ngModel)]="currentUpdatableSurvey.q2answer" ngModel>
+                                    <label for="" class="checkboxLabel">Television</label>
+                                </div>
+                                <div class="horizontal">
+                                    <input type="radio" name="interest" id="" value="INTERNET" [(ngModel)]="currentUpdatableSurvey.q2answer" ngModel>
+                                    <label for="" class="checkboxLabel">Internet</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">How likely will you recommend?</label>
+                        <select name="likelihood" id="" [(ngModel)]="currentUpdatableSurvey.q3answer"  ngModel>
+                            <option value="VERY_LIKELY">Very Likely</option>
+                            <option value="LIKELY">Likely</option>
+                            <option value="UNLIKELY">Unlikely</option>
+                        </select>
+                    </div>
+    
+                    <div class="vertical">
+                        <label for="" class="addComm">Additional Comments</label>
+                        <textarea name="additionalComments" id="" [(ngModel)]="currentUpdatableSurvey.additionalComments"  ngModel></textarea>
+                    </div>
+    
+                </fieldset>
+    
+    
+                <div class="btns">
+                    <button class="submit-btn" name="submit" type="submit">Submit</button>
+    
+                    <button class="reset-btn" name="reset" (click) = "onReset()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    }
+
+
+    @for(survey of this.allSurveysSignal(); track survey.id; let idx = $index){
+    <div class="content">
+        <div class="horizontal">
+
+            <div>
+                <div class="horizontal">
+                    <p><span class="tag">First name:</span> {{ survey.firstName }}</p>
+                    <p><span class="tag">Last name:</span> {{ survey.lastName }}</p>
+                    <p><span class="tag">Date:</span> {{ survey.dateOfSurvey }}</p>
+                </div>
+
+                <div class="horizontal">
+                    <p><span class="tag">Phone:</span> {{ survey.phone }}</p>
+                    <p><span class="tag">Email:</span> {{ survey.email }}</p>
+                </div>
+
+                <div class="horizontal">
+                    <p><span class="tag">Adress:</span> </p>
+                    <p> {{ survey.address }}</p>
+                    <p> {{survey.city}}</p>
+                    <p> {{ survey.state }}</p>
+                    <p> {{ survey.zip }}</p>
+                </div>
+
+                <div class="horizontal">
+
+                    <p><span class="tag">What do you like most about campus?</span></p>
+                    <ul class="horizontal">
+                        @if(survey.q1Atmosphere){
+                        <li>Atmosphere</li>
+                        }
+                        @if(survey.q1Campus){
+                        <li>Campus</li>
+                        }
+                        @if(survey.q1Dorms){
+                        <li>Dorms</li>
+                        }
+                        @if(survey.q1Location){
+                        <li>Location</li>
+                        }
+                        @if(survey.q1Sports){
+                        <li>Sports</li>
+                        }
+                        @if(survey.q1Students){
+                        <li>Students</li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="horizontal">
+                    <p><span class="tag">How you became interested in university?</span> <span
+                            class="ans">{{survey.q2answer}}</span></p>
+                </div>
+                <div class="horizontal">
+                    <p><span class="tag">How likely will you recommend?</span> <span class="ans">{{ survey.q3answer
+                            }}</span></p>
+                </div>
+                <div class="horizontal">
+                    <p><span class="tag">Additional Comments:</span> <span
+                            class="ans">{{survey.additionalComments}}</span></p>
+                </div>
+            </div>
+
+            <div class="up-del-btn">
+
+                <div class="vertical">
+                    <div>
+                        <button class="update-btn" (click)="onClickUpdate(survey, idx)">Update</button>
+                    </div>
+                    <div>
+                        <button class="delete-btn" (click)="onClickDelete(survey)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    }@empty{
+    <p>No surveys to display</p>
+    }
+
+</div>

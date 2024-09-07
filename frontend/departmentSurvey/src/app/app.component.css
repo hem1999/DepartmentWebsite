@@ -1,0 +1,42 @@
+*{
+    color: white;
+}
+main{
+    height: 100%;
+    /* background-color: rgb(14, 10, 10); */
+    background-color: #3a3838;
+}
+header{
+    background-color:rgb(97, 95, 95) ;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+header div{
+    background-color: rgb(97, 95, 95);
+    margin-right: 50px;
+    width: 20%;
+    height: 100%;
+}
+header p{
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 5px;
+    height: 100%;
+    background-color: #3a3838 ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+header p :hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+.welcome{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}

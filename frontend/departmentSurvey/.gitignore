@@ -1,0 +1,10 @@
+node_modules
+.vscode
+.angular
+package-lock.json
+package.json
+.editorconfig
+tsconfig.app.json
+tsconfig.json
+vduddu_report.pdf
+tsconfig.spec.json
